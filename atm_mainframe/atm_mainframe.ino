@@ -68,8 +68,8 @@ void pollButton1()
   while (1)
   {
     bt1 = !digitalRead(button1); // when button is pressed bt1 = true
-    if (bt1)
-    {
+    if (bt1){
+      delay(300);
       deposit();
     }
     // make periodic about 100ms
@@ -77,13 +77,13 @@ void pollButton1()
   }
 }
 
-void pollButton2()
+void pollButton2(void *pvParameters)
 {
   while (1)
   {
     bt2 = !digitalRead(button2); // when button is pressed bt2 = true
-    if (bt2)
-    {
+    if (bt2){
+      delay(300);
       withdraw();
     }
     // make periodic about 100ms
@@ -132,7 +132,7 @@ void withdraw()
 
     // print transaction occuring
     lcd.clear(); 
-    lcd.print("tx occurring...");
+    lcd.print("tx ocurring...");
     
     delay(2000); // artificial execution time
 
