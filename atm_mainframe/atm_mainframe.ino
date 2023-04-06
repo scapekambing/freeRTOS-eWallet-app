@@ -39,9 +39,9 @@ void setup()
   lcd.print("$");
   lcd.print(balance);
 
-  xTaskCreate(printSerial, "serial monitor resource", 100, NULL, 2, NULL);
-  xTaskCreate(pollButton1, "button resource", 100, NULL, 1, NULL);
-  xTaskCreate(pollButton2, "button resource", 100, NULL, 1, NULL);
+  xTaskCreate(printSerial, "mainframe infoview", 100, NULL, 2, NULL);
+  xTaskCreate(pollButton1, "button1 poller", 100, NULL, 1, NULL);
+  xTaskCreate(pollButton2, "button2 poller", 100, NULL, 1, NULL);
   vTaskStartScheduler();
 }
 
