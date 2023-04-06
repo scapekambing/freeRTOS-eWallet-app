@@ -132,7 +132,7 @@ void withdraw()
 
     // print transaction occuring
     lcd.clear(); 
-    lcd.print("tx ocurring...");
+    lcd.print("tx occurring...");
     
     delay(2000); // artificial execution time
 
