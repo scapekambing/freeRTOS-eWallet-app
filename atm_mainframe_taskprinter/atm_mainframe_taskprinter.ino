@@ -68,8 +68,8 @@ void pollButton1()
   while (1)
   {
     bt1 = !digitalRead(button1); // when button is pressed bt1 = true
-    if (bt1)
-    {
+    delay(300);
+    if (bt1){
       deposit();
     }
     // make periodic about 100ms
@@ -82,8 +82,8 @@ void pollButton2(void *pvParameters)
   while (1)
   {
     bt2 = !digitalRead(button2); // when button is pressed bt2 = true
-    if (bt2)
-    {
+    delay(300);
+    if (bt2){
       withdraw();
     }
     // make periodic about 100ms
@@ -95,7 +95,7 @@ void pollButton2(void *pvParameters)
 void deposit()
 {
   n_requested++;
-  if(xSemaphoreTake(mutex, portMAX_DELAY) == pdTRUE)
+  if(true)
   {
     n_accessed++;
     balance += 20;
@@ -125,7 +125,7 @@ void withdraw()
 {
   n_requested++;
   // Serial.println(balance);
-  if(xSemaphoreTake(mutex, portMAX_DELAY) == pdTRUE)
+  if(true)
   {
     n_accessed++;
     balance -= 20;
