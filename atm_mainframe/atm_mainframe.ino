@@ -77,7 +77,7 @@ void pollButton1()
   }
 }
 
-void pollButton2(void *pvParameters)
+void pollButton2()
 {
   while (1)
   {
